@@ -12,9 +12,12 @@ void new_frame_callback(Canvas* canvas, void* context);
 void new_frame_callback(Canvas* canvas, void* context) {
     UNUSED(context);
     
-    int i;
-    for (i = 0; i < 80; i = i + 5) {
-        canvas_draw_str(canvas, 50, i, "Olle-san");
+    int x;
+    int y;
+    for (x = 0; x < canvas_width(canvas); x = x + 5) {
+        for (y = 0; y < canvas_height(canvas); y = y + 5) {
+            canvas_draw_str(canvas, x, y, "Olle-san");
+        }
     }
 };
 
